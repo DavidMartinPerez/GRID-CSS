@@ -1,0 +1,54 @@
+main{
+    display:grid;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    grid-gap:10px;
+    font-size: 30px;
+    /* Especificar posición de las areas */
+    grid-template-areas:
+        "cabeza"
+        "izquierda"
+        "contenido"
+        "derecha"
+        "footer";
+}
+
+/* Breakpoint */
+@media (min-width: 600px){
+    main{
+        grid-template-areas:
+            "cabeza cabeza derecha"
+            "izquierda contenido derecha"
+            "izquierda footer footer";
+        grid-template-columns: 2fr 4fr 2fr;
+        grid-template-rows: 4fr 5fr 1fr;
+    }
+}
+
+main > *{
+    background-color: coral;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nombrar las areas */
+header{
+    grid-area: cabeza;
+}
+
+aside:first-of-type{
+    grid-area: izquierda;
+}
+
+article{
+    grid-area: contenido;
+}
+
+aside:last-of-type{
+    grid-area: derecha;
+}
+
+footer{
+    grid-area: footer;
+}
