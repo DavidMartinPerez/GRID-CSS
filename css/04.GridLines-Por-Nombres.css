@@ -1,15 +1,20 @@
 main{
     height: 100vh;
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 15px;
     /*grid-template-columns: 1fr 2fr;*/
+    /* Llamamos por nombres a las lineas del grid*/
+    /* Es una forma mas comoda para renombrar las lineas y librarnos de span */
+    /* Es mucho más visual */
     grid-template-columns:
         [sidebar-start] 1fr
-        [contenido-start] 2fr;
+        [sidebar-end contenido-start] 2fr
+        [contenido-end];
     grid-template-rows:
         [header-start] 1fr
-        [contenido-start] 2fr
-        [footer-start] 1fr;
+        [header-start contenido-start] 2fr
+        [contenido-end footer-start] 1fr
+        [footer-end];
 }
 
 main > * {
@@ -20,3 +25,17 @@ main > * {
     align-items: center;
 }
 
+/*header {
+    grid-column: sidebar-start / span 2;
+}
+footer {
+    /* -1 ocuparia todas las columnas */
+   /* grid-column: sidebar-start / -1;
+}*/
+header{
+    grid-column: sidebar-start / contenido-end;
+}
+aside{
+    grid-column: sidebar-start / sidebar-end;
+    grid-row: contenido-start / footer-end;
+}
