@@ -30,7 +30,7 @@ Puede contener N numeros de Grid cells
 
 * grid-template-columns: El tamaño de las columnas
 * grid-template-rows: El tamaño de las filas
-* grid-template-rows: columnas / filas
+* grid-template-rows: filas / columnas (horizontal / vertical)
 * grid-area-templates: Ordenar las areas por sus nombres
 * grid-area: Definir el nombre de un area
 

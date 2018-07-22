@@ -1,0 +1,109 @@
+/* Generales */
+html * {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+/* */
+a:visited{
+    color: white;
+}
+.cuerpo__img{
+    width: 100%;
+    height: auto;
+}
+/* FlexBox */
+.cuerpo > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.cuerpo {
+    display: grid;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+/* Break Point Mobile */
+.cuerpo__cabecera{
+    background-color: aquamarine;
+}
+.cuerpo__lateralDerecha{
+    background-color: lightcoral;
+}
+.cuerpo__articulo{
+    background-color: lightblue;
+    flex-direction: column; /* Direccion en columnas */
+}
+.cuerpo__lateralIzquierda{
+    background-color: blueviolet;
+    color: white;
+}
+.cuerpo__seccionPrimera{
+    background-color: cyan
+}
+.cuerpo__seccionSegunda{
+    background-color: goldenrod;
+}
+.cuerpo__pie{
+    background-color: darkslategray;
+    color: white;
+}
+
+
+/* Break Point tablet*/
+@media(min-width: 600px ){
+    .cuerpo {
+        grid-template: 1fr 3fr 3fr 1fr / 1fr 2fr 2fr;
+    }
+    .cuerpo__cabecera{
+        grid-column: 1 / -1;
+    }
+    .cuerpo__articulo{
+        grid-column: span 2;
+    }
+    .cuerpo__lateralDerecha{
+        grid-row: 3 / 4;
+    }
+    .cuerpo__pie{
+        grid-column: 1 / -1;
+    }
+}
+
+/* Break Point desktop*/
+@media(min-width: 900px ){
+    .cuerpo{
+        grid-template-columns: 1fr 3fr 3fr 1fr ;
+        /*grid-template-rows: 0.8fr 6fr 2fr 0.8fr;
+        grid-template-columns: 0.5fr 2fr 2fr 0.5fr;*/
+    }
+    .cuerpo__lateralDerecha{
+        grid-column: 4 / 5;
+        grid-row: 2 / span 2;
+        color: white;
+    }
+    .cuerpo__articulo{
+        grid-column: span 2;
+    }
+    .cuerpo__lateralIzquierda{
+        grid-row: span 2;
+    }
+}
+
+@media(min-width:1200px){
+    .cuerpo{
+        grid-template: 1fr 1fr 4fr 1fr / 0.5fr 1fr 1fr 0.5fr;
+        grid-gap:1px
+    }
+}
+
