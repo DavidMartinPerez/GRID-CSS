@@ -1,0 +1,28 @@
+main {
+    display:grid;
+    height: 100vh;
+    grid-gap: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    grid-template:
+        repeat(4, 100px) / repeat(3, 1fr)
+    ;
+    /* Row Axis */
+    justify-items: stretch;
+
+    /* Column axis */
+    align-items: stretch;
+}
+
+div {
+    background-color: goldenrod;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div:nth-child(5){
+    background-color: aquamarine;
+    /* Justify-self sirve para los hijos del grid */
+    justify-self: center;
+    align-self: center;
+}
