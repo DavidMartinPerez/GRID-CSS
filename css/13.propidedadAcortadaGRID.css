@@ -1,0 +1,34 @@
+main {
+    display:grid;
+    height: 100vh;
+    grid-gap: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    grid:
+        /* Fila / Columna */
+        auto-flow 10fr 5fr / 2fr 8fr
+    ;
+
+}
+
+@media(max-width: 640px ){
+    main{
+        grid:
+            /* Fila / Columna */
+            auto-flow 10fr 8fr / 1fr
+        ;
+    }
+    main > div:nth-child(2n) {
+        background-color: aquamarine;
+    }
+    main > div:nth-child(3n) {
+        background-color: goldenrod;
+    }
+}
+div{
+    background-color: coral;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
