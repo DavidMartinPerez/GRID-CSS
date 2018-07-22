@@ -1,0 +1,25 @@
+main {
+    display:grid;
+    height: 100vh;
+    grid-gap: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+}
+
+main > * {
+    order: 1;
+}
+
+div{
+    background-color: goldenrod;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+div:nth-child(4){
+    background-color: purple;
+    color:white;
+    order: 1;
+}
